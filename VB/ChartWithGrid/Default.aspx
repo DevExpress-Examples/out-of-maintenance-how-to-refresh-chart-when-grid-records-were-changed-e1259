@@ -1,12 +1,12 @@
 <%@ Page Language="vb" AutoEventWireup="true" CodeBehind="Default.aspx.vb" Inherits="ChartWithGrid._Default" %>
 
-<%@ Register Assembly="DevExpress.Web.ASPxGridView.v9.3, Version=9.3.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
 	Namespace="DevExpress.Web.ASPxGridView" TagPrefix="dxwgv" %>
-<%@ Register Assembly="DevExpress.Web.ASPxEditors.v9.3, Version=9.3.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.Web.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
 	Namespace="DevExpress.Web.ASPxEditors" TagPrefix="dxe" %>
-<%@ Register Assembly="DevExpress.XtraCharts.v9.3.Web, Version=9.3.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.XtraCharts.v13.1.Web, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
 	Namespace="DevExpress.XtraCharts.Web" TagPrefix="dxchartsui" %>
-<%@ Register Assembly="DevExpress.XtraCharts.v9.3, Version=9.3.2.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
+<%@ Register Assembly="DevExpress.XtraCharts.v13.1, Version=13.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a"
 	Namespace="DevExpress.XtraCharts" TagPrefix="cc1" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -54,39 +54,63 @@
 			</Columns>
 		</dxwgv:ASPxGridView>
 		<dxchartsui:WebChartControl ID="WebChartControl1" runat="server" ClientInstanceName="Chart"
-			DataSourceID="AccessDataSource1" DiagramTypeName="SimpleDiagram3D" Height="348px"
+			DataSourceID="AccessDataSource1"  Height="348px"
 			OnCustomCallback="WebChartControl1_CustomCallback" Width="833px">
 			<SeriesSerializable>
-				<cc1:Series ArgumentDataMember="ProductID" LabelTypeName="Pie3DSeriesLabel" Name="Series 1"
-					PointOptionsTypeName="PiePointOptions" SeriesViewTypeName="Pie3DSeriesView" ValueDataMembersSerializable="UnitPrice">
-					<view hiddenserializablestring="to be serialized"></view>
-					<label hiddenserializablestring="to be serialized">
-						<fillstyle filloptionstypename="SolidFillOptions">
-<Options HiddenSerializableString="to be serialized"></Options>
+				<cc1:Series ArgumentDataMember="ProductID"  Name="Series 1"
+					  ValueDataMembersSerializable="UnitPrice">
+					<ViewSerializable>
+<cc1:Pie3DSeriesView hiddenserializablestring="to be serialized"></cc1:Pie3DSeriesView>
+</ViewSerializable>
+					<LabelSerializable>
+<cc1:Pie3DSeriesLabel hiddenserializablestring="to be serialized">
+						<fillstyle >
+<OptionsSerializable>
+<cc1:SolidFillOptions HiddenSerializableString="to be serialized"></cc1:SolidFillOptions>
+</OptionsSerializable>
 </fillstyle>
-					</label>
-					<pointoptions hiddenserializablestring="to be serialized"></pointoptions>
-					<legendpointoptions hiddenserializablestring="to be serialized"></legendpointoptions>
+					</cc1:Pie3DSeriesLabel>
+</LabelSerializable>
+					<PointOptionsSerializable>
+<cc1:PiePointOptions hiddenserializablestring="to be serialized"></cc1:PiePointOptions>
+</PointOptionsSerializable>
+					<LegendPointOptionsSerializable>
+<cc1:PiePointOptions hiddenserializablestring="to be serialized"></cc1:PiePointOptions>
+</LegendPointOptionsSerializable>
 				</cc1:Series>
 			</SeriesSerializable>
-			<SeriesTemplate LabelTypeName="SideBySideBarSeriesLabel" PointOptionsTypeName="PointOptions"
-				SeriesViewTypeName="SideBySideBarSeriesView">
-				<View HiddenSerializableString="to be serialized">
-				</View>
-				<Label HiddenSerializableString="to be serialized">
-					<FillStyle FillOptionsTypeName="SolidFillOptions">
-						<Options HiddenSerializableString="to be serialized" />
+			<SeriesTemplate  
+				>
+				<ViewSerializable>
+<cc1:SideBySideBarSeriesView HiddenSerializableString="to be serialized">
+				</cc1:SideBySideBarSeriesView>
+</ViewSerializable>
+				<LabelSerializable>
+<cc1:SideBySideBarSeriesLabel HiddenSerializableString="to be serialized">
+					<FillStyle >
+						<OptionsSerializable>
+<cc1:SolidFillOptions HiddenSerializableString="to be serialized" />
+</OptionsSerializable>
 					</FillStyle>
-				</Label>
-				<PointOptions HiddenSerializableString="to be serialized">
-				</PointOptions>
-				<LegendPointOptions HiddenSerializableString="to be serialized">
-				</LegendPointOptions>
+				</cc1:SideBySideBarSeriesLabel>
+</LabelSerializable>
+				<PointOptionsSerializable>
+<cc1:PointOptions HiddenSerializableString="to be serialized">
+				</cc1:PointOptions>
+</PointOptionsSerializable>
+				<LegendPointOptionsSerializable>
+<cc1:PointOptions HiddenSerializableString="to be serialized">
+				</cc1:PointOptions>
+</LegendPointOptionsSerializable>
 			</SeriesTemplate>
-			<Diagram RotationMatrixSerializable="1;0;0;0;0;0.5;-0.866025403784439;0;0;0.866025403784439;0.5;0;0;0;0;1">
-			</Diagram>
-			<FillStyle FillOptionsTypeName="SolidFillOptions">
-				<Options HiddenSerializableString="to be serialized" />
+			<DiagramSerializable>
+<cc1:SimpleDiagram3D RotationMatrixSerializable="1;0;0;0;0;0.5;-0.866025403784439;0;0;0.866025403784439;0.5;0;0;0;0;1">
+			</cc1:SimpleDiagram3D>
+</DiagramSerializable>
+			<FillStyle >
+				<OptionsSerializable>
+<cc1:SolidFillOptions HiddenSerializableString="to be serialized" />
+</OptionsSerializable>
 			</FillStyle>
 		</dxchartsui:WebChartControl>
 	</form>
