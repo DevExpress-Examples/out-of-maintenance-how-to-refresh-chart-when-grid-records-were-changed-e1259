@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [Default.aspx](./CS/ChartWithGrid/Default.aspx) (VB: [Default.aspx.vb](./VB/ChartWithGrid/Default.aspx.vb))
+* [Default.aspx](./CS/ChartWithGrid/Default.aspx) (VB: [Default.aspx](./VB/ChartWithGrid/Default.aspx))
 * [Default.aspx.cs](./CS/ChartWithGrid/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/ChartWithGrid/Default.aspx.vb))
 <!-- default file list end -->
 # How to refresh chart when grid records were changed.
