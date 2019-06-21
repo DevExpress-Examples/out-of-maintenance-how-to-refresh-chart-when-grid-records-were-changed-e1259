@@ -5,6 +5,9 @@
 * [Default.aspx.cs](./CS/ChartWithGrid/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/ChartWithGrid/Default.aspx.vb))
 <!-- default file list end -->
 # How to refresh chart when grid records were changed.
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e1259/)**
+<!-- run online end -->
 
 
 <p>Description: This example demonstrates, how to refresh chart on callback, when grid records were edited. To accomplish this task, simply handle the ASPxGridView.EndCallback client-side event, and then use the ASPxClientWebChartControl.PerformCallback method to send a callback to the server and generate the server-side WebChartControl.CustomCallback event. After that, simply refresh your chart control within this event handler.</p><p><strong>See Also:</strong><br />
